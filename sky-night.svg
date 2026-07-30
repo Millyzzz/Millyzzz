@@ -1,83 +1,94 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="900" height="180" viewBox="0 0 900 180" fill="none">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 160" width="900" role="img" aria-label="Hand-drawn night sky">
   <defs>
-    <linearGradient id="skyNight" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0" stop-color="#0d0221"/>
-      <stop offset="0.4" stop-color="#1a0a2e"/>
-      <stop offset="0.7" stop-color="#16213e"/>
-      <stop offset="1" stop-color="#1a0a3e"/>
+    <linearGradient id="nightSky2" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1e1b4b" />
+      <stop offset="100%" stop-color="#312e81" />
     </linearGradient>
-    <radialGradient id="moonNight" cx="0.5" cy="0.5">
-      <stop offset="0" stop-color="#fef9c3" stop-opacity="0.4"/>
-      <stop offset="0.5" stop-color="#fde047" stop-opacity="0.15"/>
-      <stop offset="1" stop-color="#facc15" stop-opacity="0"/>
+    <radialGradient id="ffSky" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#fff" stop-opacity="1" />
+      <stop offset="30%" stop-color="#fef08a" stop-opacity="0.9" />
+      <stop offset="100%" stop-color="#fde047" stop-opacity="0" />
     </radialGradient>
-    <linearGradient id="cloudNight" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0" stop-color="#4c1d95" stop-opacity="0.5"/>
-      <stop offset="1" stop-color="#312e81" stop-opacity="0.3"/>
-    </linearGradient>
-    <filter id="moonGlow">
-      <feGaussianBlur stdDeviation="6" result="blur"/>
-      <feMerge>
-        <feMergeNode in="blur"/>
-        <feMergeNode in="SourceGraphic"/>
-      </feMerge>
+    <filter id="nwWobble">
+      <feTurbulence baseFrequency="0.04" numOctaves="2" seed="9" />
+      <feDisplacementMap in="SourceGraphic" scale="1.5" />
     </filter>
   </defs>
 
-  <rect width="900" height="180" fill="url(#skyNight)"/>
+  <style><![CDATA[
+    .nw-twinkle { animation: nwt 2s ease-in-out infinite; }
+    .nw-twinkle.k1 { animation-delay: 0s; }
+    .nw-twinkle.k2 { animation-delay: 0.3s; }
+    .nw-twinkle.k3 { animation-delay: 0.6s; }
+    .nw-twinkle.k4 { animation-delay: 0.9s; }
+    .nw-twinkle.k5 { animation-delay: 1.2s; }
+    @keyframes nwt {
+      0%, 100% { opacity: 1;   transform: scale(1); }
+      50%      { opacity: 0.3; transform: scale(0.6); }
+    }
+    .nw-firefly { animation: nwfirefly 6s ease-in-out infinite; }
+    .nwf1 { animation-delay: 0s; }
+    .nwf2 { animation-delay: 1s; animation-duration: 7s; }
+    .nwf3 { animation-delay: 2s; animation-duration: 8s; }
+    @keyframes nwfirefly {
+      0%, 100% { transform: translate(0, 0); opacity: 0.3; }
+      50%      { transform: translate(15px, -10px); opacity: 1; }
+    }
+  ]]></style>
 
-  <!-- Moon glow -->
-  <circle cx="730" cy="55" r="60" fill="url(#moonNight)"/>
-  <!-- Moon -->
-  <circle cx="730" cy="55" r="28" fill="#fef9c3" opacity="0.9" filter="url(#moonGlow)"/>
-  <!-- Moon craters -->
-  <circle cx="722" cy="48" r="4" fill="#eab308" opacity="0.3"/>
-  <circle cx="738" cy="58" r="3" fill="#eab308" opacity="0.3"/>
-  <circle cx="725" cy="62" r="2.5" fill="#eab308" opacity="0.25"/>
+  <rect width="900" height="160" fill="url(#nightSky2)" />
 
-  <!-- Stars (many) -->
-  <circle cx="50" cy="20" r="1.5" fill="#fff" opacity="0.8"/>
-  <circle cx="120" cy="40" r="1" fill="#fff" opacity="0.6"/>
-  <circle cx="200" cy="15" r="1.5" fill="#f5d0fe" opacity="0.7"/>
-  <circle cx="280" cy="35" r="1" fill="#fff" opacity="0.5"/>
-  <circle cx="350" cy="25" r="2" fill="#c7d2fe" opacity="0.7"/>
-  <circle cx="420" cy="50" r="1" fill="#fff" opacity="0.4"/>
-  <circle cx="490" cy="20" r="1.5" fill="#f5d0fe" opacity="0.6"/>
-  <circle cx="560" cy="40" r="1" fill="#fff" opacity="0.5"/>
-  <circle cx="640" cy="15" r="1.5" fill="#c7d2fe" opacity="0.6"/>
-  <circle cx="820" cy="30" r="1" fill="#fff" opacity="0.5"/>
-  <circle cx="860" cy="50" r="1.5" fill="#f5d0fe" opacity="0.6"/>
-  <circle cx="80" cy="90" r="1" fill="#fff" opacity="0.4"/>
-  <circle cx="180" cy="100" r="1.5" fill="#e879f9" opacity="0.4"/>
-  <circle cx="300" cy="110" r="1" fill="#fff" opacity="0.3"/>
-  <circle cx="450" cy="100" r="1.5" fill="#c7d2fe" opacity="0.3"/>
-  <circle cx="600" cy="120" r="1" fill="#fff" opacity="0.3"/>
-
-  <!-- Twinkling stars (4-point) -->
-  <g opacity="0.7">
-    <path d="M 150 30 L 152 35 L 157 37 L 152 39 L 150 44 L 148 39 L 143 37 L 148 35 Z" fill="#f5d0fe"/>
-    <path d="M 400 20 L 402 25 L 407 27 L 402 29 L 400 34 L 398 29 L 393 27 L 398 25 Z" fill="#c7d2fe"/>
-    <path d="M 680 60 L 682 65 L 687 67 L 682 69 L 680 74 L 678 69 L 673 67 L 678 65 Z" fill="#f5d0fe"/>
-    <path d="M 50 140 L 52 145 L 57 147 L 52 149 L 50 154 L 48 149 L 43 147 L 48 145 Z" fill="#e879f9" opacity="0.5"/>
+  <!-- Twinkling stars -->
+  <g fill="#fef9c3">
+    <circle class="nw-twinkle k1" cx="80"  cy="30" r="2" />
+    <circle class="nw-twinkle k2" cx="180" cy="50" r="1.5" />
+    <circle class="nw-twinkle k3" cx="280" cy="25" r="2" />
+    <circle class="nw-twinkle k4" cx="400" cy="40" r="1.5" />
+    <circle class="nw-twinkle k5" cx="500" cy="30" r="2" />
+    <circle class="nw-twinkle k1" cx="620" cy="55" r="1.5" />
+    <circle class="nw-twinkle k2" cx="720" cy="40" r="2" />
+    <circle class="nw-twinkle k3" cx="840" cy="60" r="1.5" />
+    <circle class="nw-twinkle k4" cx="50"  cy="75" r="1.2" />
+    <circle class="nw-twinkle k5" cx="380" cy="60" r="1.5" />
+    <!-- Big sparkle stars -->
+    <g class="nw-twinkle k2" transform="translate(130, 50)">
+      <line x1="-7" y1="0" x2="7" y2="0" stroke="#fef9c3" stroke-width="1.2" />
+      <line x1="0" y1="-7" x2="0" y2="7" stroke="#fef9c3" stroke-width="1.2" />
+    </g>
+    <g class="nw-twinkle k4" transform="translate(580, 35)">
+      <line x1="-7" y1="0" x2="7" y2="0" stroke="#fef9c3" stroke-width="1.2" />
+      <line x1="0" y1="-7" x2="0" y2="7" stroke="#fef9c3" stroke-width="1.2" />
+    </g>
   </g>
 
-  <!-- Wispy clouds (dark) -->
-  <g opacity="0.4">
-    <ellipse cx="120" cy="55" rx="45" ry="18" fill="url(#cloudNight)"/>
-    <ellipse cx="150" cy="52" rx="35" ry="15" fill="url(#cloudNight)"/>
+  <!-- Crescent moon -->
+  <g transform="translate(820, 40)">
+    <circle r="22" fill="#fef9c3" filter="url(#nwWobble)" />
+    <circle cx="6" cy="-2" r="20" fill="url(#nightSky2)" />
   </g>
-  <g opacity="0.3">
-    <ellipse cx="500" cy="100" rx="50" ry="16" fill="url(#cloudNight)"/>
-    <ellipse cx="530" cy="97" rx="35" ry="13" fill="url(#cloudNight)"/>
-  </g>
-  <g opacity="0.25">
-    <ellipse cx="280" cy="125" rx="40" ry="12" fill="url(#cloudNight)"/>
+
+  <!-- Dim clouds (purple) -->
+  <g filter="url(#nwWobble)">
+    <path d="M 100,80 Q 80,65 130,68 Q 160,55 195,72 Q 225,85 195,90 Q 150,95 110,85 Z" fill="#6366f1" opacity="0.4" />
+    <path d="M 380,90 Q 360,75 410,78 Q 450,68 490,85 Q 520,98 470,102 Q 410,105 380,95 Z" fill="#6366f1" opacity="0.35" />
   </g>
 
   <!-- Fireflies -->
-  <circle cx="250" cy="100" r="2.5" fill="#fde047" opacity="0.6" filter="url(#moonGlow)"/>
-  <circle cx="450" cy="80" r="2" fill="#a78bfa" opacity="0.5" filter="url(#moonGlow)"/>
-  <circle cx="650" cy="130" r="2.5" fill="#e879f9" opacity="0.5" filter="url(#moonGlow)"/>
-  <circle cx="100" cy="150" r="2" fill="#fde047" opacity="0.4" filter="url(#moonGlow)"/>
-  <circle cx="820" cy="140" r="2" fill="#c7d2fe" opacity="0.5" filter="url(#moonGlow)"/>
+  <g>
+    <g class="nw-firefly nwf1" transform="translate(140, 90)">
+      <circle r="9" fill="url(#ffSky)" />
+      <circle r="2" fill="#fff" />
+    </g>
+    <g class="nw-firefly nwf2" transform="translate(380, 110)">
+      <circle r="9" fill="url(#ffSky)" />
+      <circle r="2" fill="#fff" />
+    </g>
+    <g class="nw-firefly nwf3" transform="translate(620, 100)">
+      <circle r="9" fill="url(#ffSky)" />
+      <circle r="2" fill="#fff" />
+    </g>
+  </g>
+
+  <!-- Wavy underline -->
+  <path d="M 50,130 Q 150,120 250,130 T 450,130 T 650,130 T 850,130" stroke="#a5b4fc" stroke-width="2.5" fill="none" stroke-linecap="round" opacity="0.6" />
 </svg>

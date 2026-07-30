@@ -1,72 +1,115 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="900" height="180" viewBox="0 0 900 180" fill="none">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 160" width="900" role="img" aria-label="Hand-drawn sky">
   <defs>
-    <linearGradient id="skyDay" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0" stop-color="#c7d2fe"/>
-      <stop offset="0.4" stop-color="#e0e7ff"/>
-      <stop offset="0.7" stop-color="#f3e8ff"/>
-      <stop offset="1" stop-color="#fce7f3"/>
+    <linearGradient id="skyPaper" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#fef3c7" />
+      <stop offset="50%" stop-color="#fff7e6" />
+      <stop offset="100%" stop-color="#fce7f3" />
     </linearGradient>
-    <radialGradient id="sunDay" cx="0.5" cy="0.5">
-      <stop offset="0" stop-color="#fef9c3"/>
-      <stop offset="0.5" stop-color="#fde047"/>
-      <stop offset="1" stop-color="#facc15" stop-opacity="0.3"/>
-    </radialGradient>
-    <linearGradient id="cloudDay" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0" stop-color="#ffffff" stop-opacity="0.95"/>
-      <stop offset="1" stop-color="#f3e8ff" stop-opacity="0.8"/>
-    </linearGradient>
+    <filter id="skyWobble">
+      <feTurbulence type="fractalNoise" baseFrequency="0.03" numOctaves="2" seed="5" />
+      <feDisplacementMap in="SourceGraphic" scale="2" />
+    </filter>
   </defs>
 
-  <rect width="900" height="180" fill="url(#skyDay)"/>
+  <style><![CDATA[
+    .sky-cloud {
+      animation: drift 18s ease-in-out infinite;
+    }
+    .sky-cloud.c1 { animation-duration: 20s; }
+    .sky-cloud.c2 { animation-duration: 24s; animation-delay: -8s; }
+    .sky-cloud.c3 { animation-duration: 22s; animation-delay: -14s; }
+    @keyframes drift {
+      0%, 100% { transform: translateX(-12px); }
+      50%      { transform: translateX(12px); }
+    }
+    .sky-bird {
+      animation: birdFly 10s linear infinite;
+    }
+    .sky-bird.bd1 { animation-delay: 0s; }
+    .sky-bird.bd2 { animation-delay: -5s; animation-duration: 12s; }
+    @keyframes birdFly {
+      0%   { transform: translate(-30px, 0); }
+      100% { transform: translate(950px, -20px); }
+    }
+    .sun-pulse {
+      transform-box: fill-box;
+      transform-origin: center;
+      animation: pulse 3s ease-in-out infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50%      { transform: scale(1.05); }
+    }
+    .sun-rays-spin {
+      transform-box: fill-box;
+      transform-origin: center;
+      animation: spin 45s linear infinite;
+    }
+    @keyframes spin {
+      from { transform: rotate(0deg); }
+      to   { transform: rotate(360deg); }
+    }
+    .pencil-stroke {
+      stroke-dasharray: 600;
+      stroke-dashoffset: 600;
+      animation: drawLine 4s ease-out infinite;
+    }
+    @keyframes drawLine {
+      0%, 100% { stroke-dashoffset: 600; }
+      30%, 70% { stroke-dashoffset: 0; }
+    }
+  ]]></style>
 
-  <!-- Sun -->
-  <circle cx="730" cy="60" r="40" fill="url(#sunDay)" opacity="0.8"/>
-  <circle cx="730" cy="60" r="25" fill="#fef9c3" opacity="0.9"/>
+  <!-- Sky paper background -->
+  <rect width="900" height="160" fill="url(#skyPaper)" />
 
-  <!-- Sun rays -->
-  <g opacity="0.3" stroke="#fde047" stroke-width="2" stroke-linecap="round">
-    <line x1="730" y1="5" x2="730" y2="15"/>
-    <line x1="780" y1="60" x2="790" y2="60"/>
-    <line x1="680" y1="60" x2="670" y2="60"/>
-    <line x1="770" y1="20" x2="763" y2="27"/>
-    <line x1="690" y1="20" x2="697" y2="27"/>
-    <line x1="770" y1="100" x2="763" y2="93"/>
-    <line x1="690" y1="100" x2="697" y2="93"/>
+  <!-- Sun with rays -->
+  <g transform="translate(800, 40)">
+    <g class="sun-rays-spin">
+      <line x1="0" y1="-40" x2="0" y2="-55" stroke="#fb923c" stroke-width="2" stroke-linecap="round" opacity="0.6" />
+      <line x1="28" y1="-28" x2="38" y2="-38" stroke="#fb923c" stroke-width="2" stroke-linecap="round" opacity="0.6" />
+      <line x1="40" y1="0" x2="55" y2="0" stroke="#fb923c" stroke-width="2" stroke-linecap="round" opacity="0.6" />
+      <line x1="28" y1="28" x2="38" y2="38" stroke="#fb923c" stroke-width="2" stroke-linecap="round" opacity="0.6" />
+      <line x1="-28" y1="-28" x2="-38" y2="-38" stroke="#fb923c" stroke-width="2" stroke-linecap="round" opacity="0.6" />
+      <line x1="-40" y1="0" x2="-55" y2="0" stroke="#fb923c" stroke-width="2" stroke-linecap="round" opacity="0.6" />
+    </g>
+    <g class="sun-pulse">
+      <circle r="28" fill="#fcd34d" filter="url(#skyWobble)" />
+      <circle r="28" fill="none" stroke="#fb923c" stroke-width="2" stroke-dasharray="3 5" opacity="0.7" />
+    </g>
   </g>
 
-  <!-- Clouds -->
-  <g opacity="0.9">
-    <ellipse cx="120" cy="55" rx="45" ry="22" fill="url(#cloudDay)"/>
-    <ellipse cx="150" cy="50" rx="35" ry="20" fill="url(#cloudDay)"/>
-    <ellipse cx="95" cy="60" rx="25" ry="15" fill="url(#cloudDay)"/>
+  <!-- Clouds (hand-drawn, drifting) -->
+  <g class="sky-cloud c1" filter="url(#skyWobble)">
+    <path d="M 100,60 Q 80,40 130,42 Q 150,30 180,45 Q 210,32 230,55 Q 250,68 215,72 Q 180,82 140,75 Q 100,72 100,60 Z" fill="#fff" opacity="0.95" />
+    <path d="M 100,60 Q 80,40 130,42 Q 150,30 180,45 Q 210,32 230,55 Q 250,68 215,72 Q 180,82 140,75 Q 100,72 100,60 Z" fill="none" stroke="#fbcfe8" stroke-width="1.5" opacity="0.6" />
+  </g>
+  <g class="sky-cloud c2" filter="url(#skyWobble)">
+    <path d="M 380,45 Q 360,25 410,28 Q 430,15 470,30 Q 500,18 530,42 Q 555,55 510,60 Q 470,70 420,62 Q 380,55 380,45 Z" fill="#fff" opacity="0.92" />
+    <path d="M 380,45 Q 360,25 410,28 Q 430,15 470,30 Q 500,18 530,42 Q 555,55 510,60 Q 470,70 420,62 Q 380,55 380,45 Z" fill="none" stroke="#bae6fd" stroke-width="1.5" opacity="0.6" />
+  </g>
+  <g class="sky-cloud c3" filter="url(#skyWobble)">
+    <path d="M 600,80 Q 585,60 625,62 Q 650,50 680,68 Q 705,80 670,85 Q 635,92 605,85 Q 595,80 600,80 Z" fill="#fff" opacity="0.85" />
   </g>
 
-  <g opacity="0.7">
-    <ellipse cx="380" cy="40" rx="35" ry="16" fill="url(#cloudDay)"/>
-    <ellipse cx="405" cy="38" rx="28" ry="14" fill="url(#cloudDay)"/>
+  <!-- Birds flying -->
+  <g class="sky-bird bd1">
+    <path d="M 0,30 Q 5,24 10,30 M 10,30 Q 15,24 20,30" stroke="#7c2d12" stroke-width="2" fill="none" stroke-linecap="round" />
+  </g>
+  <g class="sky-bird bd2">
+    <path d="M 0,90 Q 4,86 8,90 M 8,90 Q 12,86 16,90" stroke="#7c2d12" stroke-width="1.8" fill="none" stroke-linecap="round" />
   </g>
 
-  <g opacity="0.6">
-    <ellipse cx="600" cy="110" rx="50" ry="20" fill="url(#cloudDay)"/>
-    <ellipse cx="630" cy="105" rx="35" ry="16" fill="url(#cloudDay)"/>
-    <ellipse cx="575" cy="115" rx="25" ry="12" fill="url(#cloudDay)"/>
-  </g>
+  <!-- Pencil wavy underline (decorative) -->
+  <path class="pencil-stroke" d="M 50,130 Q 150,120 250,130 T 450,130 T 650,130 T 850,130" stroke="#fbbf24" stroke-width="2.5" fill="none" stroke-linecap="round" opacity="0.8" />
 
-  <g opacity="0.5">
-    <ellipse cx="250" cy="130" rx="40" ry="14" fill="url(#cloudDay)"/>
-    <ellipse cx="275" cy="128" rx="30" ry="12" fill="url(#cloudDay)"/>
+  <!-- Stars/flowers scattered -->
+  <g fill="#fbbf24">
+    <path d="M 280,90 L 282,98 L 290,98 L 284,103 L 286,111 L 280,106 L 274,111 L 276,103 L 270,98 L 278,98 Z" />
+    <path d="M 510,100 L 512,106 L 518,106 L 513,110 L 515,116 L 510,112 L 505,116 L 507,110 L 502,106 L 508,106 Z" opacity="0.8" />
   </g>
-
-  <!-- Birds -->
-  <g fill="none" stroke="#7c3aed" stroke-width="2.5" stroke-linecap="round" opacity="0.5">
-    <path d="M 300 70 Q 305 65 310 70 Q 315 65 320 70"/>
-    <path d="M 340 85 Q 344 81 348 85 Q 352 81 356 85"/>
-    <path d="M 280 95 Q 283 92 286 95 Q 289 92 292 95"/>
+  <!-- Hearts -->
+  <g fill="#ec4899">
+    <path d="M 730,90 C 728,86 723,86 723,90 C 723,94 730,100 730,100 C 730,100 737,94 737,90 C 737,86 732,86 730,90 Z" opacity="0.7" />
   </g>
-
-  <!-- Floating petals -->
-  <ellipse cx="200" cy="100" rx="4" ry="7" fill="#e879f9" opacity="0.3" transform="rotate(30 200 100)"/>
-  <ellipse cx="500" cy="80" rx="3" ry="6" fill="#a78bfa" opacity="0.25" transform="rotate(-45 500 80)"/>
-  <ellipse cx="650" cy="140" rx="4" ry="7" fill="#f9a8d4" opacity="0.2" transform="rotate(60 650 140)"/>
-  <ellipse cx="150" cy="160" rx="3" ry="5" fill="#818cf8" opacity="0.2" transform="rotate(-20 150 160)"/>
 </svg>
