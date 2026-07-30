@@ -1,0 +1,173 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="200" viewBox="0 0 900 200" fill="none">
+  <defs>
+    <linearGradient id="grassDay" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#d9f99d"/>
+      <stop offset="0.3" stop-color="#a3e635"/>
+      <stop offset="1" stop-color="#65a30d"/>
+    </linearGradient>
+    <linearGradient id="skyFooterDay" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#f3e8ff"/>
+      <stop offset="0.5" stop-color="#fce7f3"/>
+      <stop offset="1" stop-color="#fae8ff"/>
+    </linearGradient>
+    <radialGradient id="petalF1" cx="0.5" cy="0.5">
+      <stop offset="0" stop-color="#fce4ff"/>
+      <stop offset="0.7" stop-color="#e879f9"/>
+      <stop offset="1" stop-color="#c026d3"/>
+    </radialGradient>
+    <radialGradient id="petalF2" cx="0.5" cy="0.5">
+      <stop offset="0" stop-color="#ede9fe"/>
+      <stop offset="0.7" stop-color="#a78bfa"/>
+      <stop offset="1" stop-color="#7c3aed"/>
+    </radialGradient>
+    <radialGradient id="petalF3" cx="0.5" cy="0.5">
+      <stop offset="0" stop-color="#fce7f3"/>
+      <stop offset="0.7" stop-color="#f9a8d4"/>
+      <stop offset="1" stop-color="#db2777"/>
+    </radialGradient>
+    <radialGradient id="centerF" cx="0.5" cy="0.5">
+      <stop offset="0" stop-color="#fef08a"/>
+      <stop offset="1" stop-color="#eab308"/>
+    </radialGradient>
+    <linearGradient id="catBody" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#f9a8d4"/>
+      <stop offset="1" stop-color="#db2777"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Sky background (upper portion) -->
+  <rect width="900" height="200" fill="url(#skyFooterDay)"/>
+
+  <!-- Grass (rolling hills) -->
+  <path d="M 0 120 Q 100 100 200 115 Q 300 95 400 110 Q 500 90 600 105 Q 700 100 800 115 Q 850 120 900 110 L 900 200 L 0 200 Z" fill="url(#grassDay)"/>
+
+  <!-- Grass blades -->
+  <g stroke="#65a30d" stroke-width="1.5" stroke-linecap="round" opacity="0.6">
+    <path d="M 50 130 L 48 122"/>
+    <path d="M 55 128 L 53 120"/>
+    <path d="M 120 125 L 118 117"/>
+    <path d="M 125 123 L 123 115"/>
+    <path d="M 300 120 L 298 112"/>
+    <path d="M 305 118 L 303 110"/>
+    <path d="M 500 115 L 498 107"/>
+    <path d="M 505 113 L 503 105"/>
+    <path d="M 700 118 L 698 110"/>
+    <path d="M 705 116 L 703 108"/>
+    <path d="M 850 125 L 848 117"/>
+  </g>
+
+  <!-- Fence (picketers) -->
+  <g opacity="0.5">
+    <rect x="100" y="95" width="6" height="35" rx="3" fill="#fef3c7"/>
+    <rect x="115" y="92" width="6" height="38" rx="3" fill="#fef3c7"/>
+    <rect x="130" y="95" width="6" height="35" rx="3" fill="#fef3c7"/>
+    <rect x="760" y="92" width="6" height="38" rx="3" fill="#fef3c7"/>
+    <rect x="775" y="95" width="6" height="35" rx="3" fill="#fef3c7"/>
+    <rect x="790" y="92" width="6" height="38" rx="3" fill="#fef3c7"/>
+    <path d="M 98 95 L 103 90 L 108 95" fill="#fef3c7"/>
+    <path d="M 113 92 L 118 87 L 123 92" fill="#fef3c7"/>
+    <path d="M 128 95 L 133 90 L 138 95" fill="#fef3c7"/>
+    <path d="M 758 92 L 763 87 L 768 92" fill="#fef3c7"/>
+    <path d="M 773 95 L 778 90 L 783 95" fill="#fef3c7"/>
+    <path d="M 788 92 L 793 87 L 798 92" fill="#fef3c7"/>
+  </g>
+
+  <!-- ====== FLOWERS IN GARDEN ====== -->
+
+  <!-- Flower 1 -->
+  <g transform="translate(80 140) scale(0.65)">
+    <g transform="rotate(0)"><ellipse cx="0" cy="-22" rx="14" ry="22" fill="url(#petalF1)" opacity="0.9"/></g>
+    <g transform="rotate(72)"><ellipse cx="0" cy="-22" rx="14" ry="22" fill="url(#petalF1)" opacity="0.9"/></g>
+    <g transform="rotate(144)"><ellipse cx="0" cy="-22" rx="14" ry="22" fill="url(#petalF1)" opacity="0.9"/></g>
+    <g transform="rotate(216)"><ellipse cx="0" cy="-22" rx="14" ry="22" fill="url(#petalF1)" opacity="0.9"/></g>
+    <g transform="rotate(288)"><ellipse cx="0" cy="-22" rx="14" ry="22" fill="url(#petalF1)" opacity="0.9"/></g>
+    <circle cx="0" cy="0" r="10" fill="url(#centerF)"/>
+    <line x1="0" y1="10" x2="0" y2="40" stroke="#65a30d" stroke-width="3" stroke-linecap="round"/>
+    <ellipse cx="-8" cy="28" rx="8" ry="3" fill="#86c5d6" opacity="0.6" transform="rotate(-30 -8 28)"/>
+  </g>
+
+  <!-- Flower 2 -->
+  <g transform="translate(250 145) scale(0.55)">
+    <g transform="rotate(36)"><ellipse cx="0" cy="-22" rx="14" ry="22" fill="url(#petalF2)" opacity="0.9"/></g>
+    <g transform="rotate(108)"><ellipse cx="0" cy="-22" rx="14" ry="22" fill="url(#petalF2)" opacity="0.9"/></g>
+    <g transform="rotate(180)"><ellipse cx="0" cy="-22" rx="14" ry="22" fill="url(#petalF2)" opacity="0.9"/></g>
+    <g transform="rotate(252)"><ellipse cx="0" cy="-22" rx="14" ry="22" fill="url(#petalF2)" opacity="0.9"/></g>
+    <g transform="rotate(324)"><ellipse cx="0" cy="-22" rx="14" ry="22" fill="url(#petalF2)" opacity="0.9"/></g>
+    <circle cx="0" cy="0" r="10" fill="url(#centerF)"/>
+    <line x1="0" y1="10" x2="0" y2="50" stroke="#65a30d" stroke-width="3" stroke-linecap="round"/>
+    <ellipse cx="8" cy="35" rx="7" ry="3" fill="#86c5d6" opacity="0.6" transform="rotate(30 8 35)"/>
+  </g>
+
+  <!-- Flower 3 -->
+  <g transform="translate(650 142) scale(0.6)">
+    <g transform="rotate(0)"><ellipse cx="0" cy="-22" rx="14" ry="22" fill="url(#petalF3)" opacity="0.9"/></g>
+    <g transform="rotate(72)"><ellipse cx="0" cy="-22" rx="14" ry="22" fill="url(#petalF3)" opacity="0.9"/></g>
+    <g transform="rotate(144)"><ellipse cx="0" cy="-22" rx="14" ry="22" fill="url(#petalF3)" opacity="0.9"/></g>
+    <g transform="rotate(216)"><ellipse cx="0" cy="-22" rx="14" ry="22" fill="url(#petalF3)" opacity="0.9"/></g>
+    <g transform="rotate(288)"><ellipse cx="0" cy="-22" rx="14" ry="22" fill="url(#petalF3)" opacity="0.9"/></g>
+    <circle cx="0" cy="0" r="10" fill="url(#centerF)"/>
+    <line x1="0" y1="10" x2="0" y2="45" stroke="#65a30d" stroke-width="3" stroke-linecap="round"/>
+    <ellipse cx="-8" cy="30" rx="8" ry="3" fill="#86c5d6" opacity="0.6" transform="rotate(-30 -8 30)"/>
+  </g>
+
+  <!-- Flower 4 (small) -->
+  <g transform="translate(820 148) scale(0.5)">
+    <g transform="rotate(36)"><ellipse cx="0" cy="-22" rx="14" ry="22" fill="url(#petalF1)" opacity="0.85"/></g>
+    <g transform="rotate(108)"><ellipse cx="0" cy="-22" rx="14" ry="22" fill="url(#petalF1)" opacity="0.85"/></g>
+    <g transform="rotate(180)"><ellipse cx="0" cy="-22" rx="14" ry="22" fill="url(#petalF1)" opacity="0.85"/></g>
+    <g transform="rotate(252)"><ellipse cx="0" cy="-22" rx="14" ry="22" fill="url(#petalF1)" opacity="0.85"/></g>
+    <g transform="rotate(324)"><ellipse cx="0" cy="-22" rx="14" ry="22" fill="url(#petalF1)" opacity="0.85"/></g>
+    <circle cx="0" cy="0" r="10" fill="url(#centerF)"/>
+    <line x1="0" y1="10" x2="0" y2="45" stroke="#65a30d" stroke-width="3" stroke-linecap="round"/>
+  </g>
+
+  <!-- Small buds -->
+  <circle cx="180" cy="155" r="6" fill="#e879f9" opacity="0.7"/>
+  <circle cx="400" cy="150" r="5" fill="#a78bfa" opacity="0.7"/>
+  <circle cx="550" cy="152" r="6" fill="#f9a8d4" opacity="0.7"/>
+  <circle cx="720" cy="158" r="5" fill="#818cf8" opacity="0.7"/>
+
+  <!-- ====== CAT ====== -->
+  <g transform="translate(420 110)">
+    <!-- Tail -->
+    <path d="M 45 30 Q 60 20 65 5 Q 67 -5 60 -8" stroke="url(#catBody)" stroke-width="7" fill="none" stroke-linecap="round"/>
+    <!-- Body -->
+    <ellipse cx="25" cy="35" rx="30" ry="22" fill="url(#catBody)"/>
+    <!-- Head -->
+    <circle cx="25" cy="15" r="20" fill="url(#catBody)"/>
+    <!-- Ears -->
+    <path d="M 10 5 L 8 -8 L 18 0 Z" fill="#f9a8d4"/>
+    <path d="M 40 5 L 42 -8 L 32 0 Z" fill="#f9a8d4"/>
+    <path d="M 11 2 L 10 -5 L 15 0 Z" fill="#db2777" opacity="0.5"/>
+    <path d="M 39 2 L 40 -5 L 35 0 Z" fill="#db2777" opacity="0.5"/>
+    <!-- Eyes (closed, happy) -->
+    <path d="M 16 13 Q 19 11 22 13" stroke="#1a1a2e" stroke-width="2" fill="none" stroke-linecap="round"/>
+    <path d="M 28 13 Q 31 11 34 13" stroke="#1a1a2e" stroke-width="2" fill="none" stroke-linecap="round"/>
+    <!-- Nose -->
+    <path d="M 23 19 L 25 21 L 27 19 Z" fill="#f472b6"/>
+    <!-- Mouth -->
+    <path d="M 25 21 Q 22 24 20 22" stroke="#1a1a2e" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+    <path d="M 25 21 Q 28 24 30 22" stroke="#1a1a2e" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+    <!-- Whiskers -->
+    <line x1="10" y1="18" x2="2" y2="16" stroke="#1a1a2e" stroke-width="1" opacity="0.4"/>
+    <line x1="10" y1="20" x2="2" y2="21" stroke="#1a1a2e" stroke-width="1" opacity="0.4"/>
+    <line x1="40" y1="18" x2="48" y2="16" stroke="#1a1a2e" stroke-width="1" opacity="0.4"/>
+    <line x1="40" y1="20" x2="48" y2="21" stroke="#1a1a2e" stroke-width="1" opacity="0.4"/>
+    <!-- Paws -->
+    <ellipse cx="10" cy="55" rx="8" ry="5" fill="#f9a8d4"/>
+    <ellipse cx="40" cy="55" rx="8" ry="5" fill="#f9a8d4"/>
+  </g>
+
+  <!-- Butterfly above cat -->
+  <g transform="translate(380 85) scale(0.7)" opacity="0.7">
+    <ellipse cx="-10" cy="0" rx="10" ry="7" fill="#e879f9" opacity="0.6"/>
+    <ellipse cx="10" cy="0" rx="10" ry="7" fill="#e879f9" opacity="0.6"/>
+    <ellipse cx="-8" cy="8" rx="7" ry="5" fill="#a78bfa" opacity="0.6"/>
+    <ellipse cx="8" cy="8" rx="7" ry="5" fill="#a78bfa" opacity="0.6"/>
+    <line x1="0" y1="-4" x2="0" y2="10" stroke="#7c3aed" stroke-width="1.5" stroke-linecap="round"/>
+  </g>
+
+  <!-- Sun in corner -->
+  <circle cx="850" cy="30" r="20" fill="#fde047" opacity="0.4"/>
+  <circle cx="850" cy="30" r="12" fill="#fef9c3" opacity="0.6"/>
+</svg>

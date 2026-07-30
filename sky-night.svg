@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="180" viewBox="0 0 900 180" fill="none">
+  <defs>
+    <linearGradient id="skyNight" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0d0221"/>
+      <stop offset="0.4" stop-color="#1a0a2e"/>
+      <stop offset="0.7" stop-color="#16213e"/>
+      <stop offset="1" stop-color="#1a0a3e"/>
+    </linearGradient>
+    <radialGradient id="moonNight" cx="0.5" cy="0.5">
+      <stop offset="0" stop-color="#fef9c3" stop-opacity="0.4"/>
+      <stop offset="0.5" stop-color="#fde047" stop-opacity="0.15"/>
+      <stop offset="1" stop-color="#facc15" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="cloudNight" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#4c1d95" stop-opacity="0.5"/>
+      <stop offset="1" stop-color="#312e81" stop-opacity="0.3"/>
+    </linearGradient>
+    <filter id="moonGlow">
+      <feGaussianBlur stdDeviation="6" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <rect width="900" height="180" fill="url(#skyNight)"/>
+
+  <!-- Moon glow -->
+  <circle cx="730" cy="55" r="60" fill="url(#moonNight)"/>
+  <!-- Moon -->
+  <circle cx="730" cy="55" r="28" fill="#fef9c3" opacity="0.9" filter="url(#moonGlow)"/>
+  <!-- Moon craters -->
+  <circle cx="722" cy="48" r="4" fill="#eab308" opacity="0.3"/>
+  <circle cx="738" cy="58" r="3" fill="#eab308" opacity="0.3"/>
+  <circle cx="725" cy="62" r="2.5" fill="#eab308" opacity="0.25"/>
+
+  <!-- Stars (many) -->
+  <circle cx="50" cy="20" r="1.5" fill="#fff" opacity="0.8"/>
+  <circle cx="120" cy="40" r="1" fill="#fff" opacity="0.6"/>
+  <circle cx="200" cy="15" r="1.5" fill="#f5d0fe" opacity="0.7"/>
+  <circle cx="280" cy="35" r="1" fill="#fff" opacity="0.5"/>
+  <circle cx="350" cy="25" r="2" fill="#c7d2fe" opacity="0.7"/>
+  <circle cx="420" cy="50" r="1" fill="#fff" opacity="0.4"/>
+  <circle cx="490" cy="20" r="1.5" fill="#f5d0fe" opacity="0.6"/>
+  <circle cx="560" cy="40" r="1" fill="#fff" opacity="0.5"/>
+  <circle cx="640" cy="15" r="1.5" fill="#c7d2fe" opacity="0.6"/>
+  <circle cx="820" cy="30" r="1" fill="#fff" opacity="0.5"/>
+  <circle cx="860" cy="50" r="1.5" fill="#f5d0fe" opacity="0.6"/>
+  <circle cx="80" cy="90" r="1" fill="#fff" opacity="0.4"/>
+  <circle cx="180" cy="100" r="1.5" fill="#e879f9" opacity="0.4"/>
+  <circle cx="300" cy="110" r="1" fill="#fff" opacity="0.3"/>
+  <circle cx="450" cy="100" r="1.5" fill="#c7d2fe" opacity="0.3"/>
+  <circle cx="600" cy="120" r="1" fill="#fff" opacity="0.3"/>
+
+  <!-- Twinkling stars (4-point) -->
+  <g opacity="0.7">
+    <path d="M 150 30 L 152 35 L 157 37 L 152 39 L 150 44 L 148 39 L 143 37 L 148 35 Z" fill="#f5d0fe"/>
+    <path d="M 400 20 L 402 25 L 407 27 L 402 29 L 400 34 L 398 29 L 393 27 L 398 25 Z" fill="#c7d2fe"/>
+    <path d="M 680 60 L 682 65 L 687 67 L 682 69 L 680 74 L 678 69 L 673 67 L 678 65 Z" fill="#f5d0fe"/>
+    <path d="M 50 140 L 52 145 L 57 147 L 52 149 L 50 154 L 48 149 L 43 147 L 48 145 Z" fill="#e879f9" opacity="0.5"/>
+  </g>
+
+  <!-- Wispy clouds (dark) -->
+  <g opacity="0.4">
+    <ellipse cx="120" cy="55" rx="45" ry="18" fill="url(#cloudNight)"/>
+    <ellipse cx="150" cy="52" rx="35" ry="15" fill="url(#cloudNight)"/>
+  </g>
+  <g opacity="0.3">
+    <ellipse cx="500" cy="100" rx="50" ry="16" fill="url(#cloudNight)"/>
+    <ellipse cx="530" cy="97" rx="35" ry="13" fill="url(#cloudNight)"/>
+  </g>
+  <g opacity="0.25">
+    <ellipse cx="280" cy="125" rx="40" ry="12" fill="url(#cloudNight)"/>
+  </g>
+
+  <!-- Fireflies -->
+  <circle cx="250" cy="100" r="2.5" fill="#fde047" opacity="0.6" filter="url(#moonGlow)"/>
+  <circle cx="450" cy="80" r="2" fill="#a78bfa" opacity="0.5" filter="url(#moonGlow)"/>
+  <circle cx="650" cy="130" r="2.5" fill="#e879f9" opacity="0.5" filter="url(#moonGlow)"/>
+  <circle cx="100" cy="150" r="2" fill="#fde047" opacity="0.4" filter="url(#moonGlow)"/>
+  <circle cx="820" cy="140" r="2" fill="#c7d2fe" opacity="0.5" filter="url(#moonGlow)"/>
+</svg>

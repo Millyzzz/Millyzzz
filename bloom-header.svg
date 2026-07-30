@@ -1,0 +1,167 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="260" viewBox="0 0 900 260" fill="none">
+  <defs>
+    <linearGradient id="bgDay" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#fef3ff"/>
+      <stop offset="0.5" stop-color="#f9e7ff"/>
+      <stop offset="1" stop-color="#f0e0ff"/>
+    </linearGradient>
+    <linearGradient id="vineDay" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#86c5d6"/>
+      <stop offset="1" stop-color="#a7d8e3"/>
+    </linearGradient>
+    <radialGradient id="petalA" cx="0.5" cy="0.5">
+      <stop offset="0" stop-color="#fce4ff"/>
+      <stop offset="0.6" stop-color="#e879f9"/>
+      <stop offset="1" stop-color="#c026d3"/>
+    </radialGradient>
+    <radialGradient id="petalB" cx="0.5" cy="0.5">
+      <stop offset="0" stop-color="#ede9fe"/>
+      <stop offset="0.6" stop-color="#a78bfa"/>
+      <stop offset="1" stop-color="#7c3aed"/>
+    </radialGradient>
+    <radialGradient id="petalC" cx="0.5" cy="0.5">
+      <stop offset="0" stop-color="#e0e7ff"/>
+      <stop offset="0.6" stop-color="#818cf8"/>
+      <stop offset="1" stop-color="#4f46e5"/>
+    </radialGradient>
+    <radialGradient id="petalD" cx="0.5" cy="0.5">
+      <stop offset="0" stop-color="#fce7f3"/>
+      <stop offset="0.6" stop-color="#f9a8d4"/>
+      <stop offset="1" stop-color="#db2777"/>
+    </radialGradient>
+    <radialGradient id="centerA" cx="0.5" cy="0.5">
+      <stop offset="0" stop-color="#fef08a"/>
+      <stop offset="1" stop-color="#eab308"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="900" height="260" rx="20" fill="url(#bgDay)"/>
+
+  <!-- Soft glow circles -->
+  <circle cx="150" cy="80" r="120" fill="#e879f9" opacity="0.06"/>
+  <circle cx="750" cy="100" r="100" fill="#818cf8" opacity="0.06"/>
+  <circle cx="450" cy="50" r="80" fill="#a78bfa" opacity="0.05"/>
+
+  <!-- Vine branches -->
+  <path d="M 0 50 Q 80 40 120 60 Q 160 30 200 55 Q 240 75 280 45" stroke="url(#vineDay)" stroke-width="3" fill="none" opacity="0.6"/>
+  <path d="M 900 50 Q 820 40 780 60 Q 740 30 700 55 Q 660 75 620 45" stroke="url(#vineDay)" stroke-width="3" fill="none" opacity="0.6"/>
+  <path d="M 0 240 Q 60 220 100 235 Q 140 210 180 230" stroke="url(#vineDay)" stroke-width="2" fill="none" opacity="0.4"/>
+  <path d="M 900 240 Q 840 220 800 235 Q 760 210 720 230" stroke="url(#vineDay)" stroke-width="2" fill="none" opacity="0.4"/>
+
+  <!-- Leaves on vines -->
+  <ellipse cx="70" cy="45" rx="10" ry="5" fill="#86c5d6" opacity="0.5" transform="rotate(-30 70 45)"/>
+  <ellipse cx="190" cy="55" rx="8" ry="4" fill="#86c5d6" opacity="0.5" transform="rotate(25 190 55)"/>
+  <ellipse cx="830" cy="45" rx="10" ry="5" fill="#86c5d6" opacity="0.5" transform="rotate(30 830 45)"/>
+  <ellipse cx="710" cy="55" rx="8" ry="4" fill="#86c5d6" opacity="0.5" transform="rotate(-25 710 55)"/>
+
+  <!-- ====== FLOWERS ====== -->
+  <!-- Flower template: 5 petals + center -->
+
+  <!-- Flower 1: top-left, large, petalA -->
+  <g transform="translate(70 95)">
+    <g transform="rotate(0)">
+      <ellipse cx="0" cy="-26" rx="16" ry="26" fill="url(#petalA)" opacity="0.92"/>
+    </g>
+    <g transform="rotate(72)">
+      <ellipse cx="0" cy="-26" rx="16" ry="26" fill="url(#petalA)" opacity="0.92"/>
+    </g>
+    <g transform="rotate(144)">
+      <ellipse cx="0" cy="-26" rx="16" ry="26" fill="url(#petalA)" opacity="0.92"/>
+    </g>
+    <g transform="rotate(216)">
+      <ellipse cx="0" cy="-26" rx="16" ry="26" fill="url(#petalA)" opacity="0.92"/>
+    </g>
+    <g transform="rotate(288)">
+      <ellipse cx="0" cy="-26" rx="16" ry="26" fill="url(#petalA)" opacity="0.92"/>
+    </g>
+    <circle cx="0" cy="0" r="12" fill="url(#centerA)"/>
+    <circle cx="0" cy="0" r="6" fill="#fde047"/>
+  </g>
+
+  <!-- Flower 2: top-right, large, petalB -->
+  <g transform="translate(830 95)">
+    <g transform="rotate(36)">
+      <ellipse cx="0" cy="-26" rx="16" ry="26" fill="url(#petalB)" opacity="0.92"/>
+    </g>
+    <g transform="rotate(108)">
+      <ellipse cx="0" cy="-26" rx="16" ry="26" fill="url(#petalB)" opacity="0.92"/>
+    </g>
+    <g transform="rotate(180)">
+      <ellipse cx="0" cy="-26" rx="16" ry="26" fill="url(#petalB)" opacity="0.92"/>
+    </g>
+    <g transform="rotate(252)">
+      <ellipse cx="0" cy="-26" rx="16" ry="26" fill="url(#petalB)" opacity="0.92"/>
+    </g>
+    <g transform="rotate(324)">
+      <ellipse cx="0" cy="-26" rx="16" ry="26" fill="url(#petalB)" opacity="0.92"/>
+    </g>
+    <circle cx="0" cy="0" r="12" fill="url(#centerA)"/>
+    <circle cx="0" cy="0" r="6" fill="#fde047"/>
+  </g>
+
+  <!-- Flower 3: left side, medium, petalC -->
+  <g transform="translate(40 190) scale(0.8)">
+    <g transform="rotate(0)"><ellipse cx="0" cy="-26" rx="14" ry="24" fill="url(#petalC)" opacity="0.88"/></g>
+    <g transform="rotate(72)"><ellipse cx="0" cy="-26" rx="14" ry="24" fill="url(#petalC)" opacity="0.88"/></g>
+    <g transform="rotate(144)"><ellipse cx="0" cy="-26" rx="14" ry="24" fill="url(#petalC)" opacity="0.88"/></g>
+    <g transform="rotate(216)"><ellipse cx="0" cy="-26" rx="14" ry="24" fill="url(#petalC)" opacity="0.88"/></g>
+    <g transform="rotate(288)"><ellipse cx="0" cy="-26" rx="14" ry="24" fill="url(#petalC)" opacity="0.88"/></g>
+    <circle cx="0" cy="0" r="11" fill="url(#centerA)"/>
+  </g>
+
+  <!-- Flower 4: right side, medium, petalD -->
+  <g transform="translate(860 185) scale(0.75)">
+    <g transform="rotate(36)"><ellipse cx="0" cy="-26" rx="14" ry="24" fill="url(#petalD)" opacity="0.88"/></g>
+    <g transform="rotate(108)"><ellipse cx="0" cy="-26" rx="14" ry="24" fill="url(#petalD)" opacity="0.88"/></g>
+    <g transform="rotate(180)"><ellipse cx="0" cy="-26" rx="14" ry="24" fill="url(#petalD)" opacity="0.88"/></g>
+    <g transform="rotate(252)"><ellipse cx="0" cy="-26" rx="14" ry="24" fill="url(#petalD)" opacity="0.88"/></g>
+    <g transform="rotate(324)"><ellipse cx="0" cy="-26" rx="14" ry="24" fill="url(#petalD)" opacity="0.88"/></g>
+    <circle cx="0" cy="0" r="11" fill="url(#centerA)"/>
+  </g>
+
+  <!-- Flower 5: small, top center-left, petalA -->
+  <g transform="translate(200 55) scale(0.5)">
+    <g transform="rotate(0)"><ellipse cx="0" cy="-26" rx="16" ry="26" fill="url(#petalA)" opacity="0.85"/></g>
+    <g transform="rotate(72)"><ellipse cx="0" cy="-26" rx="16" ry="26" fill="url(#petalA)" opacity="0.85"/></g>
+    <g transform="rotate(144)"><ellipse cx="0" cy="-26" rx="16" ry="26" fill="url(#petalA)" opacity="0.85"/></g>
+    <g transform="rotate(216)"><ellipse cx="0" cy="-26" rx="16" ry="26" fill="url(#petalA)" opacity="0.85"/></g>
+    <g transform="rotate(288)"><ellipse cx="0" cy="-26" rx="16" ry="26" fill="url(#petalA)" opacity="0.85"/></g>
+    <circle cx="0" cy="0" r="12" fill="url(#centerA)"/>
+  </g>
+
+  <!-- Flower 6: small, top center-right, petalB -->
+  <g transform="translate(700 55) scale(0.5)">
+    <g transform="rotate(36)"><ellipse cx="0" cy="-26" rx="16" ry="26" fill="url(#petalB)" opacity="0.85"/></g>
+    <g transform="rotate(108)"><ellipse cx="0" cy="-26" rx="16" ry="26" fill="url(#petalB)" opacity="0.85"/></g>
+    <g transform="rotate(180)"><ellipse cx="0" cy="-26" rx="16" ry="26" fill="url(#petalB)" opacity="0.85"/></g>
+    <g transform="rotate(252)"><ellipse cx="0" cy="-26" rx="16" ry="26" fill="url(#petalB)" opacity="0.85"/></g>
+    <g transform="rotate(324)"><ellipse cx="0" cy="-26" rx="16" ry="26" fill="url(#petalB)" opacity="0.85"/></g>
+    <circle cx="0" cy="0" r="12" fill="url(#centerA)"/>
+  </g>
+
+  <!-- Small buds -->
+  <circle cx="250" cy="200" r="8" fill="#e879f9" opacity="0.7"/>
+  <circle cx="250" cy="200" r="4" fill="#f9a8d4"/>
+  <circle cx="650" cy="205" r="7" fill="#818cf8" opacity="0.7"/>
+  <circle cx="650" cy="205" r="3" fill="#a5b4fc"/>
+
+  <!-- ====== TEXT ====== -->
+  <text x="450" y="125" text-anchor="middle" font-family="'Georgia','PingFang SC',serif" font-size="62" font-weight="700" fill="#7c3aed" letter-spacing="2">Millyzzz</text>
+  <text x="450" y="165" text-anchor="middle" font-family="'Georgia','PingFang SC',serif" font-size="17" fill="#a78bfa" letter-spacing="3" opacity="0.8">✿ blooming into something beautiful ✿</text>
+
+  <!-- Floating petals -->
+  <ellipse cx="300" cy="130" rx="5" ry="9" fill="#e879f9" opacity="0.3" transform="rotate(45 300 130)"/>
+  <ellipse cx="600" cy="140" rx="4" ry="8" fill="#a78bfa" opacity="0.3" transform="rotate(-30 600 140)"/>
+  <ellipse cx="380" cy="180" rx="4" ry="7" fill="#818cf8" opacity="0.25" transform="rotate(60 380 180)"/>
+  <ellipse cx="550" cy="175" rx="5" ry="8" fill="#f9a8d4" opacity="0.25" transform="rotate(-50 550 175)"/>
+
+  <!-- Butterfly -->
+  <g transform="translate(340 50) scale(0.6)" opacity="0.7">
+    <ellipse cx="-12" cy="0" rx="12" ry="8" fill="#e879f9" opacity="0.6"/>
+    <ellipse cx="12" cy="0" rx="12" ry="8" fill="#e879f9" opacity="0.6"/>
+    <ellipse cx="-10" cy="10" rx="8" ry="6" fill="#a78bfa" opacity="0.6"/>
+    <ellipse cx="10" cy="10" rx="8" ry="6" fill="#a78bfa" opacity="0.6"/>
+    <line x1="0" y1="-5" x2="0" y2="12" stroke="#7c3aed" stroke-width="2" stroke-linecap="round"/>
+  </g>
+</svg>
