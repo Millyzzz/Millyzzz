@@ -1,82 +1,230 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="900" height="200" viewBox="0 0 900 200" fill="none">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 240" width="900" role="img" aria-label="Tech Garden Under Cultivation — animated">
   <defs>
-    <linearGradient id="exploreBg" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0" stop-color="#f3e8ff" stop-opacity="0.5"/>
-      <stop offset="0.5" stop-color="#fce7f3" stop-opacity="0.3"/>
-      <stop offset="1" stop-color="#e0e7ff" stop-opacity="0.5"/>
+    <!-- Card background gradient -->
+    <linearGradient id="cardGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#fdf4ff"/>
+      <stop offset="50%" stop-color="#f5d0fe" stop-opacity="0.45"/>
+      <stop offset="100%" stop-color="#e9d5ff" stop-opacity="0.5"/>
     </linearGradient>
-    <radialGradient id="seedGrad" cx="0.5" cy="0.5">
-      <stop offset="0" stop-color="#fef08a"/>
-      <stop offset="1" stop-color="#65a30d"/>
+
+    <!-- Blooming flower (5 petals) -->
+    <radialGradient id="petalA" cx="50%" cy="35%" r="65%">
+      <stop offset="0%" stop-color="#fce7f3"/>
+      <stop offset="60%" stop-color="#f0abfc"/>
+      <stop offset="100%" stop-color="#c026d3"/>
     </radialGradient>
-    <linearGradient id="sproutGrad" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0" stop-color="#86c5d6"/>
-      <stop offset="1" stop-color="#65a30d"/>
-    </linearGradient>
-    <radialGradient id="petalExp" cx="0.5" cy="0.5">
-      <stop offset="0" stop-color="#fce4ff"/>
-      <stop offset="0.7" stop-color="#e879f9"/>
-      <stop offset="1" stop-color="#c026d3"/>
+    <radialGradient id="petalB" cx="50%" cy="35%" r="65%">
+      <stop offset="0%" stop-color="#ede9fe"/>
+      <stop offset="60%" stop-color="#a78bfa"/>
+      <stop offset="100%" stop-color="#7c3aed"/>
     </radialGradient>
-    <radialGradient id="centerExp" cx="0.5" cy="0.5">
-      <stop offset="0" stop-color="#fef08a"/>
-      <stop offset="1" stop-color="#eab308"/>
+    <radialGradient id="centerGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#fef9c3"/>
+      <stop offset="100%" stop-color="#fbbf24"/>
     </radialGradient>
+
+    <!-- Reusable blooming flower (5 large petals) -->
+    <symbol id="bigFlower" viewBox="-50 -50 100 100">
+      <g>
+        <ellipse cx="0" cy="-25" rx="12" ry="22" fill="url(#petalA)">
+          <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="22s" repeatCount="indefinite"/>
+        </ellipse>
+        <ellipse cx="0" cy="-25" rx="12" ry="22" fill="url(#petalA)" transform="rotate(72)">
+          <animateTransform attributeName="transform" type="rotate" from="72" to="432" dur="22s" repeatCount="indefinite"/>
+        </ellipse>
+        <ellipse cx="0" cy="-25" rx="12" ry="22" fill="url(#petalA)" transform="rotate(144)">
+          <animateTransform attributeName="transform" type="rotate" from="144" to="504" dur="22s" repeatCount="indefinite"/>
+        </ellipse>
+        <ellipse cx="0" cy="-25" rx="12" ry="22" fill="url(#petalA)" transform="rotate(216)">
+          <animateTransform attributeName="transform" type="rotate" from="216" to="576" dur="22s" repeatCount="indefinite"/>
+        </ellipse>
+        <ellipse cx="0" cy="-25" rx="12" ry="22" fill="url(#petalA)" transform="rotate(288)">
+          <animateTransform attributeName="transform" type="rotate" from="288" to="648" dur="22s" repeatCount="indefinite"/>
+        </ellipse>
+      </g>
+      <circle r="11" fill="url(#centerGlow)">
+        <animate attributeName="r" values="9;12;9" dur="3s" repeatCount="indefinite"/>
+      </circle>
+      <circle r="5" fill="#fef9c3"/>
+      <!-- Bloom in: from bud to full bloom -->
+      <animateTransform attributeName="transform" type="scale" values="0.02;1.15;0.95;1" dur="1.4s" begin="1.8s" fill="freeze" calcMode="spline" keySplines="0.34 1.56 0.64 1; 0.4 0 0.6 1; 0.4 0 0.6 1" keyTimes="0;0.6;0.85;1"/>
+    </symbol>
+
+    <!-- Medium flower (3 small petals) -->
+    <symbol id="smallFlower" viewBox="-30 -30 60 60">
+      <ellipse cx="0" cy="-12" rx="6" ry="12" fill="url(#petalB)">
+        <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="15s" repeatCount="indefinite"/>
+      </ellipse>
+      <ellipse cx="0" cy="-12" rx="6" ry="12" fill="url(#petalB)" transform="rotate(120)">
+        <animateTransform attributeName="transform" type="rotate" from="120" to="480" dur="15s" repeatCount="indefinite"/>
+      </ellipse>
+      <ellipse cx="0" cy="-12" rx="6" ry="12" fill="url(#petalB)" transform="rotate(240)">
+        <animateTransform attributeName="transform" type="rotate" from="240" to="600" dur="15s" repeatCount="indefinite"/>
+      </ellipse>
+      <circle r="4" fill="#fde047"/>
+      <animateTransform attributeName="transform" type="scale" values="0.02;1.2;1" dur="1.0s" begin="1.0s" fill="freeze" calcMode="spline" keySplines="0.34 1.56 0.64 1; 0.4 0 0.6 1" keyTimes="0;0.7;1"/>
+    </symbol>
+
+    <!-- Falling petal shape -->
+    <symbol id="petal" viewBox="-6 -8 12 16">
+      <path d="M 0 -7 C 5 -3 5 3 0 7 C -5 3 -5 -3 0 -7 Z" fill="#f9a8d4"/>
+    </symbol>
   </defs>
 
-  <!-- Background card -->
-  <rect x="20" y="20" width="860" height="160" rx="20" fill="url(#exploreBg)" stroke="#e879f9" stroke-width="1" stroke-opacity="0.3"/>
+  <!-- ============ Card background ============ -->
+  <rect x="6" y="6" width="888" height="228" rx="22" ry="22" fill="url(#cardGrad)" stroke="#e9d5ff" stroke-width="2"/>
 
-  <!-- Seed (left) -->
-  <g transform="translate(100 100)">
-    <ellipse cx="0" cy="0" rx="15" ry="20" fill="url(#seedGrad)" opacity="0.8"/>
-    <path d="M -8 5 Q 0 -5 8 5" stroke="#65a30d" stroke-width="1.5" fill="none" opacity="0.5"/>
-    <text x="0" y="45" text-anchor="middle" font-family="'Georgia',serif" font-size="13" fill="#65a30d" opacity="0.7">🌱 seed</text>
+  <!-- ============ Title ============ -->
+  <g transform="translate(450,38)" text-anchor="middle">
+    <text font-family="Georgia, serif" font-size="22" font-weight="bold" fill="#7c3aed">
+      🌱 Tech Garden — Under Cultivation 🌱
+      <animate attributeName="opacity" values="0.85;1;0.85" dur="3s" repeatCount="indefinite"/>
+    </text>
   </g>
 
-  <!-- Sprout (center-left) -->
-  <g transform="translate(250 100)">
-    <line x1="0" y1="20" x2="0" y2="-10" stroke="url(#sproutGrad)" stroke-width="3" stroke-linecap="round"/>
-    <ellipse cx="-8" cy="0" rx="10" ry="6" fill="#86c5d6" opacity="0.8" transform="rotate(-30 -8 0)"/>
-    <ellipse cx="8" cy="-5" rx="10" ry="6" fill="#86c5d6" opacity="0.8" transform="rotate(30 8 -5)"/>
-    <text x="0" y="45" text-anchor="middle" font-family="'Georgia',serif" font-size="13" fill="#65a30d" opacity="0.7">🌿 sprout</text>
+  <!-- ============ Falling petals (continuous loop) ============ -->
+  <g opacity="0.85">
+    <!-- Petal 1 -->
+    <g>
+      <use href="#petal" x="60" y="0" width="12" height="16" transform="rotate(20 60 0)"/>
+      <animateTransform attributeName="transform" type="translate" from="0 -20" to="0 260" dur="6s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;0.9;0.9;0" dur="6s" repeatCount="indefinite" keyTimes="0;0.1;0.9;1"/>
+      <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="6s" repeatCount="indefinite" additive="sum"/>
+    </g>
+    <!-- Petal 2 -->
+    <g>
+      <use href="#petal" x="140" y="0" width="10" height="14" fill="#c4b5fd"/>
+      <animateTransform attributeName="transform" type="translate" from="0 -20" to="0 260" dur="7s" begin="0.8s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;0.85;0.85;0" dur="7s" begin="0.8s" repeatCount="indefinite" keyTimes="0;0.1;0.9;1"/>
+    </g>
+    <!-- Petal 3 -->
+    <g>
+      <use href="#petal" x="220" y="0" width="14" height="18" fill="#f9a8d4"/>
+      <animateTransform attributeName="transform" type="translate" from="0 -20" to="0 260" dur="5.5s" begin="2s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;0.9;0.9;0" dur="5.5s" begin="2s" repeatCount="indefinite" keyTimes="0;0.1;0.9;1"/>
+    </g>
+    <!-- Petal 4 -->
+    <g>
+      <use href="#petal" x="310" y="0" width="11" height="15" fill="#f0abfc"/>
+      <animateTransform attributeName="transform" type="translate" from="0 -20" to="0 260" dur="6.5s" begin="1.2s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;0.85;0.85;0" dur="6.5s" begin="1.2s" repeatCount="indefinite" keyTimes="0;0.1;0.9;1"/>
+    </g>
+    <!-- Petal 5 -->
+    <g>
+      <use href="#petal" x="400" y="0" width="13" height="17" fill="#a78bfa"/>
+      <animateTransform attributeName="transform" type="translate" from="0 -20" to="0 260" dur="7.5s" begin="3s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;0.9;0.9;0" dur="7.5s" begin="3s" repeatCount="indefinite" keyTimes="0;0.1;0.9;1"/>
+    </g>
+    <!-- Petal 6 -->
+    <g>
+      <use href="#petal" x="490" y="0" width="10" height="14" fill="#fce7f3"/>
+      <animateTransform attributeName="transform" type="translate" from="0 -20" to="0 260" dur="6s" begin="4s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;0.85;0.85;0" dur="6s" begin="4s" repeatCount="indefinite" keyTimes="0;0.1;0.9;1"/>
+    </g>
+    <!-- Petal 7 -->
+    <g>
+      <use href="#petal" x="580" y="0" width="12" height="16" fill="#f9a8d4"/>
+      <animateTransform attributeName="transform" type="translate" from="0 -20" to="0 260" dur="7s" begin="2.5s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;0.9;0.9;0" dur="7s" begin="2.5s" repeatCount="indefinite" keyTimes="0;0.1;0.9;1"/>
+    </g>
+    <!-- Petal 8 -->
+    <g>
+      <use href="#petal" x="670" y="0" width="11" height="15" fill="#c4b5fd"/>
+      <animateTransform attributeName="transform" type="translate" from="0 -20" to="0 260" dur="6.5s" begin="1.5s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;0.85;0.85;0" dur="6.5s" begin="1.5s" repeatCount="indefinite" keyTimes="0;0.1;0.9;1"/>
+    </g>
+    <!-- Petal 9 -->
+    <g>
+      <use href="#petal" x="760" y="0" width="13" height="17" fill="#f0abfc"/>
+      <animateTransform attributeName="transform" type="translate" from="0 -20" to="0 260" dur="5.5s" begin="3.5s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;0.9;0.9;0" dur="5.5s" begin="3.5s" repeatCount="indefinite" keyTimes="0;0.1;0.9;1"/>
+    </g>
+    <!-- Petal 10 -->
+    <g>
+      <use href="#petal" x="830" y="0" width="10" height="14" fill="#a78bfa"/>
+      <animateTransform attributeName="transform" type="translate" from="0 -20" to="0 260" dur="7.5s" begin="0.5s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;0.85;0.85;0" dur="7.5s" begin="0.5s" repeatCount="indefinite" keyTimes="0;0.1;0.9;1"/>
+    </g>
+    <!-- Petal 11 -->
+    <g>
+      <use href="#petal" x="100" y="0" width="12" height="16" fill="#fce7f3"/>
+      <animateTransform attributeName="transform" type="translate" from="0 -20" to="0 260" dur="6.2s" begin="4.5s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;0.9;0.9;0" dur="6.2s" begin="4.5s" repeatCount="indefinite" keyTimes="0;0.1;0.9;1"/>
+    </g>
+    <!-- Petal 12 -->
+    <g>
+      <use href="#petal" x="370" y="0" width="14" height="18" fill="#f9a8d4"/>
+      <animateTransform attributeName="transform" type="translate" from="0 -20" to="0 260" dur="6.8s" begin="5s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;0.9;0.9;0" dur="6.8s" begin="5s" repeatCount="indefinite" keyTimes="0;0.1;0.9;1"/>
+    </g>
+    <!-- Petal 13 -->
+    <g>
+      <use href="#petal" x="640" y="0" width="11" height="15" fill="#c4b5fd"/>
+      <animateTransform attributeName="transform" type="translate" from="0 -20" to="0 260" dur="5.8s" begin="2.8s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;0.85;0.85;0" dur="5.8s" begin="2.8s" repeatCount="indefinite" keyTimes="0;0.1;0.9;1"/>
+    </g>
+    <!-- Petal 14 -->
+    <g>
+      <use href="#petal" x="720" y="0" width="13" height="17" fill="#f0abfc"/>
+      <animateTransform attributeName="transform" type="translate" from="0 -20" to="0 260" dur="7.2s" begin="4.2s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;0.9;0.9;0" dur="7.2s" begin="4.2s" repeatCount="indefinite" keyTimes="0;0.1;0.9;1"/>
+    </g>
   </g>
 
-  <!-- Half-bloom (center) -->
-  <g transform="translate(400 100) scale(0.7)">
-    <line x1="0" y1="25" x2="0" y2="-5" stroke="#65a30d" stroke-width="3" stroke-linecap="round"/>
-    <ellipse cx="-10" cy="5" rx="12" ry="7" fill="#86c5d6" opacity="0.7" transform="rotate(-25 -10 5)"/>
-    <ellipse cx="10" cy="0" rx="12" ry="7" fill="#86c5d6" opacity="0.7" transform="rotate(25 10 0)"/>
-    <g transform="rotate(0)"><ellipse cx="0" cy="-15" rx="10" ry="15" fill="url(#petalExp)" opacity="0.7"/></g>
-    <g transform="rotate(180)"><ellipse cx="0" cy="-15" rx="10" ry="15" fill="url(#petalExp)" opacity="0.7"/></g>
-    <circle cx="0" cy="0" r="6" fill="url(#centerExp)"/>
-    <text x="0" y="55" text-anchor="middle" font-family="'Georgia',serif" font-size="18" fill="#65a30d" opacity="0.7" transform="scale(1.43)">🌷 growing</text>
+  <!-- ============ Connecting dashed path (re-centered for 4 stages) ============ -->
+  <path d="M 190 150 Q 270 150 350 150 T 550 150 T 750 150"
+        stroke="#e879f9" stroke-width="2.5" fill="none" stroke-dasharray="6 6" opacity="0.7">
+    <animate attributeName="stroke-dashoffset" from="1000" to="0" dur="2.5s" begin="0.2s" fill="freeze"/>
+    <animate attributeName="opacity" values="0;0.7" dur="0.5s" begin="0.2s" fill="freeze"/>
+  </path>
+
+  <!-- ============ Stage 1: Seed ============ -->
+  <g transform="translate(150,150)">
+    <ellipse rx="14" ry="18" fill="#86efac" stroke="#22c55e" stroke-width="2"/>
+    <ellipse rx="14" ry="18" fill="url(#petalB)" opacity="0.4"/>
+    <path d="M -6 5 Q 0 12 6 5" stroke="#166534" stroke-width="1.5" fill="none"/>
+    <circle cx="-4" cy="-3" r="1.2" fill="#166534"/>
+    <circle cx="4" cy="-3" r="1.2" fill="#166534"/>
+    <text y="48" text-anchor="middle" font-family="Georgia, serif" font-size="14" fill="#4ade80" font-style="italic">🌱 seed</text>
   </g>
 
-  <!-- Full bloom (center-right) -->
-  <g transform="translate(580 100) scale(0.8)">
-    <line x1="0" y1="30" x2="0" y2="0" stroke="#65a30d" stroke-width="3" stroke-linecap="round"/>
-    <g transform="rotate(0)"><ellipse cx="0" cy="-22" rx="14" ry="22" fill="url(#petalExp)" opacity="0.9"/></g>
-    <g transform="rotate(72)"><ellipse cx="0" cy="-22" rx="14" ry="22" fill="url(#petalExp)" opacity="0.9"/></g>
-    <g transform="rotate(144)"><ellipse cx="0" cy="-22" rx="14" ry="22" fill="url(#petalExp)" opacity="0.9"/></g>
-    <g transform="rotate(216)"><ellipse cx="0" cy="-22" rx="14" ry="22" fill="url(#petalExp)" opacity="0.9"/></g>
-    <g transform="rotate(288)"><ellipse cx="0" cy="-22" rx="14" ry="22" fill="url(#petalExp)" opacity="0.9"/></g>
-    <circle cx="0" cy="0" r="10" fill="url(#centerExp)"/>
-    <text x="0" y="55" text-anchor="middle" font-family="'Georgia',serif" font-size="16" fill="#65a30d" opacity="0.7" transform="scale(1.25)">🌸 blooming</text>
+  <!-- ============ Stage 2: Sprout ============ -->
+  <g transform="translate(350,150)">
+    <!-- stem grows up -->
+    <path d="M 0 10 Q 0 -10 0 -25" stroke="#22c55e" stroke-width="3" fill="none" stroke-linecap="round">
+      <animate attributeName="stroke-dasharray" from="0 40" to="40 0" dur="1s" begin="0.4s" fill="freeze"/>
+    </path>
+    <!-- two leaves -->
+    <g opacity="0">
+      <ellipse cx="-12" cy="-12" rx="10" ry="5" fill="#86efac" stroke="#22c55e" stroke-width="1.5" transform="rotate(-30 -12 -12)"/>
+      <ellipse cx="12" cy="-15" rx="10" ry="5" fill="#86efac" stroke="#22c55e" stroke-width="1.5" transform="rotate(30 12 -15)"/>
+      <animate attributeName="opacity" from="0" to="1" dur="0.5s" begin="0.8s" fill="freeze"/>
+    </g>
+    <text y="48" text-anchor="middle" font-family="Georgia, serif" font-size="14" fill="#4ade80" font-style="italic">🌿 sprout</text>
   </g>
 
-  <!-- Arrow / journey line -->
-  <path d="M 120 100 Q 200 90 250 100 Q 350 110 400 100 Q 500 90 580 100" stroke="#e879f9" stroke-width="2" stroke-dasharray="5 5" fill="none" opacity="0.4"/>
-
-  <!-- Question marks (exploring) -->
-  <g transform="translate(720 100)">
-    <text x="0" y="0" text-anchor="middle" font-family="'Georgia',serif" font-size="36" fill="#a78bfa" opacity="0.6">?</text>
-    <text x="25" y="-15" text-anchor="middle" font-family="'Georgia',serif" font-size="24" fill="#e879f9" opacity="0.5">?</text>
-    <text x="-25" y="-10" text-anchor="middle" font-family="'Georgia',serif" font-size="28" fill="#818cf8" opacity="0.5">?</text>
-    <text x="0" y="45" text-anchor="middle" font-family="'Georgia',serif" font-size="13" fill="#a78bfa" opacity="0.7">✨ exploring</text>
+  <!-- ============ Stage 3: Growing (small flower) ============ -->
+  <g transform="translate(550,150)">
+    <!-- stem -->
+    <path d="M 0 10 Q 0 -20 0 -25" stroke="#22c55e" stroke-width="3" fill="none" stroke-linecap="round">
+      <animate attributeName="stroke-dasharray" from="0 40" to="40 0" dur="0.8s" begin="1.0s" fill="freeze"/>
+    </path>
+    <use href="#smallFlower" x="-25" y="-50" width="50" height="50"/>
+    <text y="48" text-anchor="middle" font-family="Georgia, serif" font-size="14" fill="#a78bfa" font-style="italic">🌷 growing</text>
   </g>
 
-  <!-- Main text -->
-  <text x="450" y="50" text-anchor="middle" font-family="'Georgia','PingFang SC',serif" font-size="20" font-weight="700" fill="#7c3aed" opacity="0.8">🌱 Tech Garden — Under Cultivation 🌱</text>
-  <text x="450" y="165" text-anchor="middle" font-family="'PingFang SC',sans-serif" font-size="14" fill="#a78bfa" opacity="0.6">每一段代码旅程，都从一颗种子开始</text>
+  <!-- ============ Stage 4: Blooming (big flower) ============ -->
+  <g transform="translate(750,150)">
+    <!-- stem -->
+    <path d="M 0 12 Q 0 -25 0 -30" stroke="#22c55e" stroke-width="3" fill="none" stroke-linecap="round">
+      <animate attributeName="stroke-dasharray" from="0 45" to="45 0" dur="0.6s" begin="1.6s" fill="freeze"/>
+    </path>
+    <use href="#bigFlower" x="-40" y="-78" width="80" height="80"/>
+    <text y="48" text-anchor="middle" font-family="Georgia, serif" font-size="14" fill="#c026d3" font-style="italic">🌸 blooming</text>
+  </g>
+
+  <!-- ============ Bottom tagline ============ -->
+  <text x="450" y="218" text-anchor="middle" font-family="Georgia, serif" font-size="13" fill="#7c3aed" font-style="italic">
+    每一段代码旅程，都从一颗种子开始 🌸
+  </text>
 </svg>
