@@ -50,5 +50,5 @@
 
 
 <div align="center">
-  <sub>🌿 Garden crafted with 💜 by <a href="https://github.com/Millyzzz">Millyzzz</a> · Every seed grows into something beautiful 🌸</sub>
+  <sub>🌿 Garden crafted by <a href="https://github.com/Millyzzz">Millyzzz</a> · Every seed grows into something beautiful 🌸</sub>
 </div>
