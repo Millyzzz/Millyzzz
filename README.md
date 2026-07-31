@@ -25,7 +25,12 @@
 
 
 <div align="center">
-  <img src="https://github-profile-trophy.vercel.app/?username=Millyzzz&amp;theme=radical&amp;no-frame=true&amp;no-bg=true&amp;column=7&amp;margin-w=4&amp;margin-h=4" alt="GitHub Trophies" />
+  <img src="https://github-readme-streak-stats.herokuapp.com/?user=Millyzzz&amp;hide_border=true&amp;background=0d02210000&amp;ring=E879F9&amp;fire=A78BFA&amp;currStreakLabel=E879F9&amp;sideLabels=818CF8&amp;dates=C4B5FD&amp;currStreakNum=F5D0FE&amp;sideNums=DDD6FE" alt="GitHub Streak" />
+</div>
+
+
+<div align="center">
+  <img src="https://github-readme-activity-graph.vercel.app/graph?username=Millyzzz&amp;theme=react-dark&amp;hide_border=true&amp;area=true&amp;bg_color=0d022100&amp;line=e879f9&amp;point=a78bfa" alt="Activity Graph" />
 </div>
 
 
